@@ -11,10 +11,10 @@
   <script>
     createPdf();
     async function createPdf() {
-      const url = 'https://github.com/jraleman/certificate42/raw/main/resources/42-certificate.pdf'
-      const existingPdfBytes = await fetch(url).then(res => res.arrayBuffer())
+      const url = 'https://www.jraleman.com/certificate42/resources/42-certificate.pdf';
+      const existingPdfBytes = await fetch(url).then(res => res.arrayBuffer());
 //       const pdfDoc = await PDFLib.PDFDocument.create();
-      const pdfDoc = await PDFLib.PDFDocument.load(existingPdfBytes)
+      const pdfDoc = await PDFLib.PDFDocument.load(existingPdfBytes);
 //       const page = pdfDoc.addPage([350, 400]);
 //       page.moveTo(110, 200);
 //       page.drawText('Hello World!');
