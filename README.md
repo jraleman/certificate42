@@ -2,9 +2,7 @@
 
 Generate the (un)official 42 Silicon Valley certificate
 
-## Preview (Demo)
-
-We can see a preview of this project by [clicking here](https://github.com/jraleman/certificate42)
+We can see a preview of this project by [clicking here](https://jraleman.com/certificate42)
 
 ## Instructions to Setup and Use
 
