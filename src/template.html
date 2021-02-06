@@ -13,15 +13,4 @@
 		<% preact.bodyEnd %>
 		<iframe id="pdf" style="width: 100%; height: 100%;"></iframe>
 	</body>
-	<script src="https://unpkg.com/pdf-lib"></script>
-	<script>
-		createPdf();
-		async function createPdf() {
-			const url = 'https://www.jraleman.com/certificate42/resources/42-certificate.pdf';
-			const existingPdfBytes = await fetch(url).then(res => res.arrayBuffer());
-			const pdfDoc = await PDFLib.PDFDocument.load(existingPdfBytes);
-			const pdfDataUri = await pdfDoc.saveAsBase64({ dataUri: true });
-			document.getElementById('pdf').src = pdfDataUri;
-		}
-	  </script>
 </html>
