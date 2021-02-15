@@ -1,4 +1,5 @@
 import { degrees, PDFDocument, rgb, StandardFonts } from 'pdf-lib';
+import pdfCertificate from './assets/42-certificate.pdf';
 
 export async function modifyPdf() {
     const url = 'https://pdf-lib.js.org/assets/with_update_sections.pdf'
@@ -21,9 +22,7 @@ export async function modifyPdf() {
 };  
 
 export async function createPdf() {
-    const url = 'https://www.jraleman.com/certificate42/resources/42-certificate.pdf';
-    const existingPdfBytes = await fetch(url).then(res => res.arrayBuffer());
-    const pdfDoc = await PDFLib.PDFDocument.load(existingPdfBytes);
+    const pdfDoc = await PDFLib.PDFDocument.load(pdfCertificate);
     const pdfDataUri = await pdfDoc.saveAsBase64({ dataUri: true });
     return pdfDataUri
 }

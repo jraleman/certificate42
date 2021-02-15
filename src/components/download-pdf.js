@@ -1,11 +1,11 @@
 import React from 'react';
-import { createPdf, modifyPdf } from '../utils';
+import { createPdf } from '../utils';
 
 const DownloadPDF = () => {
     const handleDownloadPrompt = e => {
         console.log('handleDownloadPrompt: ', e);
-        // modifyPdf();
-        createPdf();
+        const pdf = createPdf();
+        console.log('createPdf: ', pdf);
     }
     return (
         <button onClick={handleDownloadPrompt}>
