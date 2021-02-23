@@ -1,5 +1,4 @@
 import { degrees, PDFDocument, rgb, StandardFonts } from 'pdf-lib';
-import pdfCertificate from './assets/42-certificate.pdf';
 
 export async function modifyPdf() {
     const url = 'https://pdf-lib.js.org/assets/with_update_sections.pdf'
@@ -20,9 +19,3 @@ export async function modifyPdf() {
     const pdfBytes = await pdfDoc.save();
     return pdfBytes;
 };  
-
-export async function createPdf() {
-    const pdfDoc = await PDFLib.PDFDocument.load(pdfCertificate);
-    const pdfDataUri = await pdfDoc.saveAsBase64({ dataUri: true });
-    return pdfDataUri
-}
