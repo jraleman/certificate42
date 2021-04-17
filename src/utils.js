@@ -1,7 +1,8 @@
 import { degrees, PDFDocument, rgb, StandardFonts } from 'pdf-lib';
 
 export async function modifyPdf() {
-    const url = 'https://pdf-lib.js.org/assets/with_update_sections.pdf'
+    // const url = 'https://pdf-lib.js.org/assets/with_update_sections.pdf'
+    const url = './assets/certificate.pdf';
     const existingPdfBytes = await fetch(url).then(res => res.arrayBuffer())
     const pdfDoc = await PDFDocument.load(existingPdfBytes)
     const helveticaFont = await pdfDoc.embedFont(StandardFonts.Helvetica)
