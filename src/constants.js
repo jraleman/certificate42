@@ -1,5 +1,6 @@
 export const appTtitle = 'Certificate.42';
 export const userPlaceholder = 'John Doe';
+export const userError = 'Please enter a valid user :)';
 export const downloadButtonLabel = 'Generate Certificate';
 export const instructionsList = [
     'Get your (un)official 42 Silicon Valley certificate here!',

@@ -1,19 +1,26 @@
 import { useState } from 'preact/hooks';
 import download from 'downloadjs'
 import { modifyPdf } from '../utils';
-import { userPlaceholder, downloadButtonLabel } from '../constants';
+import { 
+    userError,
+    userPlaceholder,
+    downloadButtonLabel,
+} from '../constants';
 
 const GeneratePdf = () => {
-    const [username, setUsername] = useState('');
+    const [user, setUser] = useState('');
 
     const handleInput = (event) => {
         const { target } = event || {};
         const { value } = target || {};
-        setUsername(value);
+        setUser(value);
     };
 
     const handleDownloadPrompt = async () => {
-        const pdfBytes = await modifyPdf({ username });
+        if (!user || user.length > 42) {
+            return window.alert(userError);
+        }
+        const pdfBytes = await modifyPdf({ user });
         const blob = new Blob([pdfBytes], {type: 'application/pdf'});
         download(blob);
     };
@@ -21,7 +28,7 @@ const GeneratePdf = () => {
     return (
         <div>
             <input
-                value={username}
+                value={user}
                 placeholder={userPlaceholder}
                 onChange={handleInput}
             />
