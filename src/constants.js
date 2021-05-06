@@ -6,7 +6,7 @@ export const instructionsList = [
     'Get your (un)official 42 Silicon Valley certificate!',
     'Signed by Norminette and Moulinette, our dear and loved entities of this past institution.',
     'I made this because I wanted something to hang up on my wall :)',
-    'This certficate is not valid for anything...',
+    'This certificate is not valid for anything...',
 ];
 export const primaryColor = [0.00, 0.77, 0.80];
 export const pdfUrl = './assets/certificate.pdf';
