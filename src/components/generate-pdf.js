@@ -21,7 +21,8 @@ const GeneratePdf = () => {
         const pdfBytes = await modifyPdf({ user });
         const blob = new Blob([pdfBytes], { type: 'application/pdf' });
         const filename = `unofficial-certificate-${user}.42.pdf`;
-        return download(blob, filename);
+        const filetype = 'application/pdf';
+        return download(blob, filename, filetype);
     };
 
     return (

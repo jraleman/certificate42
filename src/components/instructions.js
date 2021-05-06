@@ -1,6 +1,6 @@
 import React from 'react';
 import uniqueId from 'lodash.uniqueid'
-import { instructionsList } from '../constants';
+import { instructionsList, logo } from '../constants';
 
 const InstructionsList = ({ list = [''] }) =>
     list && list.map((line) => (
@@ -11,6 +11,7 @@ const InstructionsList = ({ list = [''] }) =>
 
 const Instructions = () => (
     <div className="instruction">
+        <img src={logo} alt="42-marvin" className="logo" />
         <InstructionsList list={instructionsList} />
     </div>
 );
