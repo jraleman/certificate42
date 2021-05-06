@@ -10,9 +10,7 @@ import {
 const GeneratePdf = () => {
     const [user, setUser] = useState('');
 
-    const handleInput = (event) => {
-        const { target } = event || {};
-        const { value } = target || {};
+    const handleInput = ({ target: { value }}) => {
         setUser(value);
     };
 
@@ -21,18 +19,20 @@ const GeneratePdf = () => {
             return window.alert(userError);
         }
         const pdfBytes = await modifyPdf({ user });
-        const blob = new Blob([pdfBytes], {type: 'application/pdf'});
-        download(blob);
+        const blob = new Blob([pdfBytes], { type: 'application/pdf' });
+        const filename = `unofficial-certificate-${user}.42.pdf`;
+        return download(blob, filename);
     };
 
     return (
-        <div>
+        <div className="generate-pdf">
             <input
                 value={user}
                 placeholder={userPlaceholder}
                 onChange={handleInput}
+                className="user-input"
             />
-            <button onClick={handleDownloadPrompt}>
+            <button onClick={handleDownloadPrompt} className="download-btn">
                 {downloadButtonLabel}
             </button>
         </div>
