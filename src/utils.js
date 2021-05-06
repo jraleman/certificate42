@@ -1,21 +1,19 @@
-import { degrees, PDFDocument, rgb, StandardFonts } from 'pdf-lib';
+import { PDFDocument, rgb, StandardFonts } from 'pdf-lib';
+import { pdfUrl, primaryColor } from './constants';
 
-export async function modifyPdf() {
-    // const url = 'https://pdf-lib.js.org/assets/with_update_sections.pdf'
-    const url = './assets/certificate.pdf';
-    const existingPdfBytes = await fetch(url).then(res => res.arrayBuffer())
+export const modifyPdf = async ({ username }) => {
+    const existingPdfBytes = await fetch(pdfUrl).then(res => res.arrayBuffer())
     const pdfDoc = await PDFDocument.load(existingPdfBytes)
     const helveticaFont = await pdfDoc.embedFont(StandardFonts.Helvetica)
     const pages = pdfDoc.getPages()
     const firstPage = pages[0]
     const { width, height } = firstPage.getSize()
-    firstPage.drawText('This text was added with JavaScript!', {
-      x: 5,
-      y: height / 2 + 300,
-      size: 50,
-      font: helveticaFont,
-      color: rgb(0.95, 0.1, 0.1),
-      rotate: degrees(-45),
+    firstPage.drawText(username, {
+        x: width / 1.75,
+        y: height / 1.25,
+        size: 42,
+        font: helveticaFont,
+        color: rgb(...primaryColor),
     })
     const pdfBytes = await pdfDoc.save();
     return pdfBytes;

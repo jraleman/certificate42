@@ -1,14 +1,13 @@
 import './style';
 import Instructions from './components/instructions';
-import DownloadPDF from './components/download-pdf';
-import PreviewPdf from './components/preview-pdf';
+import GeneratePdf from './components/generate-pdf';
+import { appTtitle } from './constants';
 
 const App = () => (
 	<div>
-		<h1>Certificate.42</h1>
+		<h1>{appTtitle}</h1>
 		<Instructions />
-		<DownloadPDF />
-		<PreviewPdf />
+		<GeneratePdf />
 	</div>
 );
 
