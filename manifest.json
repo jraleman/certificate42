@@ -1,7 +1,7 @@
 {
   "name": "certificate42",
   "short_name": "certificate42",
-  "start_url": "/",
+  "start_url": "/certificate42/",
   "display": "standalone",
   "orientation": "portrait",
   "background_color": "#f9f9f9",
