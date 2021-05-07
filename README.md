@@ -1,10 +1,10 @@
-# Certifica-te-42
+# Certificate.42
 
-Generate the (un)official 42 Silicon Valley certificate
+![marvin-42](./src/assets/logo.png)
 
-We can see a preview of this project by [clicking here](https://jraleman.com/certificate42)
+Generate your (un)official 42 Silicon Valley certificate [here](https://jraleman.com/certificate42)
 
-## Instructions to Setup and Use
+## Setup
 
 1. Git clone and go to the repository
 
@@ -30,8 +30,6 @@ yarn dev
 ```
 yarn build
 ```
-
-Then we can open the file `docs/index.html`
 
 ## Resources
 
