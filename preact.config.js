@@ -4,4 +4,5 @@ export default (config, env, helpers, options) => {
         loader: 'file-loader'
     }
     config.module.rules.push(rule);
+    config.output.publicPath = env.production ? '/certificate42/' : '/';
 }

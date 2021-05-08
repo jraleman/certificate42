@@ -1,7 +1,7 @@
-import './style';
 import Instructions from './components/instructions';
 import GeneratePdf from './components/generate-pdf';
 import { appTtitle } from './constants';
+import './style';
 
 const App = () => (
 	<div className="container">
